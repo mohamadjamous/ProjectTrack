@@ -1,5 +1,6 @@
 package com.example.projecttrack.activities
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
 import androidx.activity.viewModels
@@ -12,6 +13,7 @@ import com.example.projecttrack.adapters.OngoingAdapter
 import com.example.projecttrack.databinding.ActivityMainBinding
 import com.example.projecttrack.viewmodel.MainViewModel
 import com.google.android.material.bottomappbar.BottomAppBar
+import com.google.android.material.bottomnavigation.BottomNavigationMenuView
 
 class DashboardActivity : AppCompatActivity() {
 
@@ -35,13 +37,26 @@ class DashboardActivity : AppCompatActivity() {
 
             }
 
+            bottomNavigationView.setOnNavigationItemSelectedListener { menuItem ->
+                when (menuItem.itemId) {
+                    R.id.home -> {
+                        // Handle Home item click
+                        true
+                    }
+
+                    R.id.profile -> {
+                        // Handle Dashboard item click
+                        startActivity(Intent(this@DashboardActivity, ProfileActivity::class.java))
+                        true
+                    }
+
+                    else -> false
+                }
+            }
         }
 
 
-        }
-
-
-
+    }
 
 
 }

@@ -16,12 +16,12 @@
         android:title="" />
 
     <item
-        android:id="@+id/tasks"
+        android:id="@+id/profile"
         android:icon="@drawable/tasks_icon"
         android:title="Profile" />
 
     <item
-        android:id="@+id/profile"
+        android:id="@+id/settings"
         android:icon="@drawable/profile_icon"
         android:title="Settings" />
 
